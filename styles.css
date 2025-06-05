@@ -94,6 +94,7 @@ button {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    flex-wrap: wrap;
     padding: 15px;
     background: #f8f9fa;
     border-radius: 8px;
