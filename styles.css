@@ -51,7 +51,7 @@ h1 {
 
 #todoInput:focus {
     border-color: #667eea;
-    /* BUG: Missing box-shadow for better focus indication */
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
 }
 
 button {
