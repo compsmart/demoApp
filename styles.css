@@ -220,5 +220,17 @@ button {
         margin: 10px;
     }
 
-    /* BUG: Missing responsive rules for other elements */
+        h1 {
+            font-size: 2rem; /* Adjusted for mobile */
+        }
+
+        .input-section {
+            flex-wrap: wrap;
+        }
+
+        .bulk-actions {
+            flex-wrap: wrap;
+        }
+
+        /* BUG: Missing responsive rules for other elements */
 }
