@@ -105,8 +105,29 @@ button {
     list-style: none;
     max-height: 400px;
     overflow-y: auto;
+    /* Add Firefox scrollbar styling properties */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #667eea #f1f1f1; /* For Firefox (thumb track) */
     margin-bottom: 20px;
-    /* BUG: No custom scrollbar styling, looks ugly */
+} /* This closing brace is part of the original .todo-list rule */
+
+/* Add WebKit scrollbar pseudo-elements for Chrome/Safari/Edge */
+.todo-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background: #667eea; /* Theme color */
+    border-radius: 10px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+    background: #764ba2; /* Darker theme color on hover */
 }
 
 .todo-item {
