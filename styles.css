@@ -118,6 +118,7 @@ button {
     border-radius: 8px;
     border-left: 4px solid #667eea;
     transition: transform 0.2s;
+    gap: 15px;
     /* BUG: Missing gap between flex items */
 }
 
