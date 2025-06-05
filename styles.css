@@ -139,7 +139,7 @@ button {
 
 .todo-checkbox {
     margin-right: 15px;
-    transform: scale(1.2);
+
     /* BUG: Checkbox is too big and misaligned */
     cursor: pointer;
 }
