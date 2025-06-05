@@ -65,6 +65,9 @@ button {
     transition: background 0.3s;
     /* BUG: No hover state defined */
 }
+button:hover {
+    background: #525fc9; /* Darken the background on hover */
+}
 
 /* BUG: Missing button:hover state completely */
 
