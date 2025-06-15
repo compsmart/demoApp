@@ -148,7 +148,7 @@ button {
     flex: 1;
     font-size: 16px;
     /* BUG: No word-wrap, long text will overflow */
-    word-wrap: none;
+    word-wrap: break-word;
 }
 
 .todo-actions {
