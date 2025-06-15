@@ -68,12 +68,14 @@ function toggleTodo(id) {
 
 function deleteTodo(id) {
     // BUG: No confirmation dialog
-    todos = todos.filter(t => t.id !== id);
+    if (confirm('Are you sure you want to delete this task?')) {
+        todos = todos.filter(t => t.id !== id);
 
-    saveTodos();
-    renderTodos();
-    updateStats();
-    showNotification('Task deleted!');
+        saveTodos();
+        renderTodos();
+        updateStats();
+        showNotification('Task deleted!');
+    }
 }
 
 function editTodo(id) {
@@ -160,23 +162,35 @@ function deleteCompleted() {
     const completedCount = todos.filter(t => t.completed).length;
 
     // BUG: No confirmation for bulk delete
-    todos = todos.filter(t => !t.completed);
+    if (completedCount > 0) {
+        if (confirm(`Are you sure you want to delete ${completedCount} completed task(s)?`)) {
+            todos = todos.filter(t => !t.completed);
 
-    saveTodos();
-    renderTodos();
-    updateStats();
-    showNotification(`${completedCount} completed tasks deleted!`);
+            saveTodos();
+            renderTodos();
+            updateStats();
+            showNotification(`${completedCount} completed tasks deleted!`);
+        }
+    } else {
+        showNotification('No completed tasks to delete.', 'info');
+    }
 }
 
 function clearAll() {
     // BUG: No confirmation for destructive action
-    todos = [];
-    nextId = 1;
+    if (todos.length > 0) {
+        if (confirm('Are you sure you want to clear all tasks? This cannot be undone.')) {
+            todos = [];
+            nextId = 1;
 
-    saveTodos();
-    renderTodos();
-    updateStats();
-    showNotification('All tasks cleared!');
+            saveTodos();
+            renderTodos();
+            updateStats();
+            showNotification('All tasks cleared!');
+        }
+    } else {
+        showNotification('No tasks to clear.', 'info');
+    }
 }
 
 function saveTodos() {
