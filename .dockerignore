@@ -1,0 +1,45 @@
+# Ignore files with sensitive information
+config.json
+config-local.json
+*.log
+import_results_*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+temp/
+tmp/
+
+*.log
+
+# Repo files
+config.json.example
+github_issue_importer.py
+README.md
+requirements.txt
+bug_tickets.json
+screenshot.png
+.gitignore
